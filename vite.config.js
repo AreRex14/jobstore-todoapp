@@ -1,6 +1,7 @@
 import { defineConfig, loadEnv } from 'vite';
 import laravel from 'laravel-vite-plugin';
 import vue from '@vitejs/plugin-vue';
+import path from 'path';
 
 export default ({ mode }) => {
     const env = loadEnv(mode, process.cwd());
@@ -32,9 +33,9 @@ export default ({ mode }) => {
         ],
         resolve: { 
             alias: {
-                vue: 'vue/dist/vue.esm-bundler.js',
-                "@": "/resources/js",
+                "@": path.resolve(__dirname, "/resources/js"),
             },
+            extensions: ['.js', '.ts', '.jsx', '.tsx', '.json', '.vue', '.mjs']
         },
         server: { 
             hmr: {
