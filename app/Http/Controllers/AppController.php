@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Inertia\Inertia;
 
 class AppController extends Controller
 {
@@ -12,6 +11,6 @@ class AppController extends Controller
      */
     public function __invoke(Request $request)
     {
-        return Inertia::render('App');
+        return view('app');
     }
 }
