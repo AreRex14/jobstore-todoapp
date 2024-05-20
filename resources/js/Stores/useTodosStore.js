@@ -28,6 +28,7 @@ export const useTodosStore = defineStore("todos", {
           },
         deleteTodo(id) {
             this.todos = this.todos.filter((todo) => todo.id !== id);
+            this.saveTodos();
         },
         toggleTodo(id) {
             this.todos = this.todos.map((todo) => {
